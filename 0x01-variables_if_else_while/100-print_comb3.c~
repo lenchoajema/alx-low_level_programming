@@ -14,8 +14,8 @@ int main(void)
 
 	for (d = 0, e=1; d < 100; d++, e++)
 	{
-		putchar((d / 10) + '1');
-		putchar((e % 10) + '1');
+		putchar((e / 10) + '1');
+		putchar((d % 10) + '1');
 		if (d != e)
 		{
 			putchar(',');
