@@ -10,16 +10,23 @@
 
 int main(void)
 {
-	int d, e;
+	int d, p;
 
-	for (d = 0, e=1; d < 100; d++, e++)
+	for (d = '0'; d < '9'; d++)
 	{
-		putchar((e / 10) + '1');
-		putchar((d % 10) + '1');
-		if (d != e)
+		for (p = d + 1; p <= '9'; p++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (p != d)
+			{
+				putchar(d);
+				putchar(p);
+
+				if (d == '8' && p == '9')
+					continue;
+
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 	putchar('\n');
