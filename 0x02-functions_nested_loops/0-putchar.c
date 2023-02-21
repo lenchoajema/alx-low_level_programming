@@ -9,8 +9,8 @@ char ch[8] = "_putchar";
 int i = 0;
 for (i; i < 8; i++)
 {
-putchar(ch[i]);
+_putchar(ch[i]);
 }
-putchar('\n');
+_putchar('\n');
 return (0);
 }
