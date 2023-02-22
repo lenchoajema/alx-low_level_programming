@@ -6,9 +6,9 @@
 int _islower(int c)
 {
 int lower = 0;
-  if (c >= 'a' && c <= 'z')
-    lower = 1;
-  else
-    lower = 0;
-  return (lower);
+if (c >= 'a' && c <= 'z')
+lower = 1;
+else
+lower = 0;
+return (lower);
 }
