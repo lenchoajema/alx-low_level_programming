@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *main - Entry point
+ *_islower- Entry point
  *Return: return 0 on success
  */
 int _islower(int c)
