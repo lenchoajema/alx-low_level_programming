@@ -1,0 +1,11 @@
+#include "main.h"
+/**
+ *mul - multiplication operation
+ *Return: always return the result
+ */
+int mul(int a, int b)
+{
+int mul = 0;
+mul = a * b;
+return (mul);
+}
