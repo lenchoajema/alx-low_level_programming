@@ -1,0 +1,9 @@
+#include <stdio.h>
+/**
+ * main - Entry point
+ * Return: return 1 on success
+ * @a: variable for fibonacci
+ */
+int main(void)
+{
+}
