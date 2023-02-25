@@ -2,9 +2,9 @@
 #include <stdio.h>
 /**
  *main - entry point
- *Return: always 1
+ *Return: always 0
  */
-void main(void)
+int main(void)
 {
 int i;
 for (i = 1;i <= 100; i++)
@@ -19,4 +19,5 @@ else
 printf("%d ", i);
 }
 printf("\n");
+return (0);
 }
