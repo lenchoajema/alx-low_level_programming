@@ -1,0 +1,7 @@
+#include "main.h"
+
+int main(void)
+{
+  _puts("\"to be best hacker\"\n\t- lencho ajema");
+  return (0);
+}
