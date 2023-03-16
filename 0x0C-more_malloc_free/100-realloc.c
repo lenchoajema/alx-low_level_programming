@@ -1,30 +1,38 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * array_range - create an array of integers containing a range of values
- * @min: the lower bound (included)
- * @max: the upper bound (included)
- *
- * Return: If memory allocation fails or max is less than max, return NULL.
- * Otherwise, return the newly created array.
+ * _realloc - A function that reallocates a memory block using malloc and free
+ * @ptr: pointer to the memory previously allocated
+ * @old_size: old size in bytes of memory llocated space
+ * @new_size: new size in bytes of memory to be allocated
+ * Return: void pointer to new memory location
  */
-int *array_range(int min, int max)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	int *range;
-	unsigned int width;
+	char *new_location, *new_ptr;
+	unsigned int i = 0;
 
-	if (max < min)
+	if (new_size == old_size)
+		return (ptr);
+	if (ptr == NULL) /* treat as normal malloc */
+	{
+		ptr = malloc(new_size);
+		if (ptr == NULL)
+			return (NULL);
+		return (ptr);
+	}
+	if (new_size == 0 && ptr)
+	{
+		free(ptr);
 		return (NULL);
-
-	width = max - min;
-
-	range = malloc(sizeof(int) * (width + 1));
-	if (!range)
-		return (NULL);
-
-	do {
-		*range++ = min++;
-	} while (min <= max);
-
-	return (range - width - 1);
+	}
+	new_location = malloc(new_size);
+	new_ptr = ptr;
+	if (old_size > new_size)
+		old_size = new_size;
+	for (i = 0; i < old_size; i++)
+		new_location[i] = new_ptr[i];
+	free(ptr);
+	return (new_location);
 }
