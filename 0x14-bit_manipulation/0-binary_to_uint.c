@@ -4,7 +4,7 @@
  * @b: pointer variable to store the binary and return
  * Return: alays 0 on success
  */
-int binary_to_uint(const char *b)
+unsigned int binary_to_uint(const char *b)
 {
 	unsigned int n = 0;
 
