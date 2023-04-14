@@ -6,13 +6,13 @@
  */
 ssize_t _strlen(const char *str)
 {
-        ssize_t len = 0;
+	ssize_t len = 0;
 
-        if (!str)
-                return (-1);
-        while (*str++)
-                ++len;
-        return (len);
+	if (!str)
+		return (-1);
+	while (*str++)
+		++len;
+	return (len);
 }
 /**
  * create_file - function to create a file
