@@ -67,7 +67,7 @@ ssize_t _write(const char *filename, int file, const char *buf, size_t count)
  */
 int main(int argc, const char *argv[])
 {
-	int fd_in, fd_out;
+	int fd_input, fd_output;
 	ssize_t bytes_read;
 	char buffer[BUFSIZE];
 
@@ -76,25 +76,25 @@ int main(int argc, const char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fd_in = open(argv[1], O_RDONLY);
-	if (fd_in < 0)
+	fd_input = open(argv[1], O_RDONLY);
+	if (fd_input < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd_out = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fd_out < 0)
+	fd_output = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (fd_output < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		_close(fd_in);
+		_close(fd_input);
 		exit(99);
 	}
-	while ((bytes_read = _read(argv[1], fd_in, buffer, BUFSIZE)))
+	while ((bytes_read = _read(argv[1], fd_input, buffer, BUFSIZE)))
 	{
 		if (bytes_read < 0)
 		{
-			_close(fd_in);
-			_close(fd_out);
+			_close(fd_input);
+			_close(fd_outpu);
 			exit(98);
 		}
 		if (_write(argv[2], fd_out, buffer, bytes_read) < 0)
