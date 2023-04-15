@@ -94,17 +94,17 @@ int main(int argc, const char *argv[])
 		if (bytes_read < 0)
 		{
 			_close(fd_input);
-			_close(fd_outpu);
+			_close(fd_output);
 			exit(98);
 		}
-		if (_write(argv[2], fd_out, buffer, bytes_read) < 0)
+		if (_write(argv[2], fd_output, buffer, bytes_read) < 0)
 		{
-			_close(fd_in);
-			_close(fd_out);
+			_close(fd_input);
+			_close(fd_output);
 			exit(99);
 		}
 	}
-	if ((_close(fd_in) | _close(fd_out)) < 0)
+	if ((_close(fd_input) | _close(fd_output)) < 0)
 		exit(100);
 	return (0);
 }
