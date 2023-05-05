@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * binary_to_uint: - function to convert the binary to decimal and return
+ * binary_to_uint - function to convert the binary to decimal and return
  * @len1: pointer variable to store the binary and return
  * Return: alays 0 on success
  */
