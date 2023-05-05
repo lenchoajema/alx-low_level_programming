@@ -4,7 +4,7 @@
  * @len1: pointer variable to store the binary and return
  * Return: alays 0 on success
  */
-int binary_to_uint(const char *len1)
+unsigned int binary_to_uint(const char *len1)
 {
 	unsigned int n = 0;
 
