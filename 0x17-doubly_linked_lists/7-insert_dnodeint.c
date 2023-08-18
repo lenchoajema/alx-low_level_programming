@@ -1,14 +1,14 @@
 #include "lists.h"
 
 /**
- * len_insert_dnodeint_at_index - Insert a new node at a given position
+ * insert_dnodeint_at_index - Insert a new node at a given position
  * @len_h: The head of the list
  * @len_idx: The index, starting at 0
  * @len_n: The value of the new node
  *
  * Return: The address of the new node, or NULL if it failed
  */
-dlistint_t *len_insert_dnodeint_at_index(dlistint_t **len_h, unsigned int len_idx, int len_n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **len_h, unsigned int len_idx, int len_n)
 {
 	dlistint_t *len_curr = *len_h;
 	dlistint_t *len_new;

@@ -6,7 +6,7 @@
  *
  * Return: The sum of the data (n)
  */
-int len_sum_dlistint(dlistint_t *len_head)
+int sum_dlistint(dlistint_t *len_head)
 {
 	int len_sum = 0;
 
