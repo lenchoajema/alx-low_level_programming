@@ -12,10 +12,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
     unsigned long int len;
     hash_node_t *tmp;
 
-    if (ht == NULL || ht->array == NULL || ht->len == 0 ||
+    if (ht == NULL || ht->array == NULL || ht->size == 0 ||
         key == NULL || strlen(key) == 0)
         return (NULL);
-    len = key_index((const unsigned char *)key, ht->len);
+    len = key_index((const unsigned char *)key, ht->size);
     tmp = ht->array[len];
     while (tmp != NULL)
     {
